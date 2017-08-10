@@ -41,28 +41,18 @@ public class HelloWorldController {
 		return mv;
 	}
 	 
-	@PostMapping("adder")
-	public String addTwoNumbers(@RequestParam(name="left") int first, @RequestParam(name="right") double second, Model model) {
-		Adder adder = new Adder(first, second);		
-		double result = adder.calculate();
+
+	@GetMapping("whisper-path")
+	public ModelAndView whisper(
+			@RequestParam(required=false, defaultValue="«shhhhh»") String whisper) {
+		Whisperer noob = new Whisperer(whisper);
+		String allLow = noob.lower();		
 		
-		model.addAttribute("sum", result);
-		return "helloworld/sum-result";
+		
+		ModelAndView mv = new ModelAndView("helloworld/whisper");
+		mv.addObject("title", title);
+		mv.addObject("whisper", allLow);
+		return mv;
 	}
-	
-
-
-@GetMapping("whisper-path")
-public ModelAndView whisper(
-		@RequestParam(required=false, defaultValue="«shhhhh»") String whisper) {
-	Whisperer noob = new Whisperer(whisper);
-	String allLow = noob.lower();		
-	
-	
-	ModelAndView mv = new ModelAndView("helloworld/whisper");
-	mv.addObject("title", title);
-	mv.addObject("whisper", allLow);
-	return mv;
-}
 }
  
