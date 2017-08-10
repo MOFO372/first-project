@@ -8,10 +8,10 @@
     <h1>Houston, we have a message!</h1>
     <p>
       <b>Message:</b>
-      {{ message }}
+      {{ whisper }}
     </p>
-    {{> helloworld/message-form }} <!-- go to message-form and grab all content, replaces this line with that HTML and sends to browser -->
-     {{> helloworld/whisper-form }}
+    {{> helloworld/message-form }}
+    {{> helloworld/whisper-form }} <!-- go to whisper-form and grab all content, replaces this line with that HTML and sends to browser -->
     {{> helloworld/adder-form }}
   </body>
 </html>
