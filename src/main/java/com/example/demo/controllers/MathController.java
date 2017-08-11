@@ -16,7 +16,7 @@ public class MathController {
 	@GetMapping("adder") 
 	public ModelAndView mathMethod(){
 		
-		ModelAndView mv = new ModelAndView("helloworld/tryagain"); 
+		ModelAndView mv = new ModelAndView("math/tryagain"); 
 		return mv;
 	}
 	
@@ -28,7 +28,7 @@ public class MathController {
 		double result = adder.calculate();
 
 		model.addAttribute("sum", result);
-		return "helloworld/sum-result";
+		return "math/sum-result";
 	}
 
 }
