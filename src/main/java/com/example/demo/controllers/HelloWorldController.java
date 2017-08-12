@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,5 +51,33 @@ public class HelloWorldController {
 		mv.addObject("whisper", allLow);
 		return mv;
 	}
-}
+	
+	@GetMapping("say-something") 
+		public String makeAChoice(String submittedMessage, String speechChoice, Model dataForView) {
+			
+		//if speechChoice is yell
+			if(speechChoice.equals("yell")) {
+				//make submitted message LOUD
+				Yeller yellerVar = new Yeller(submittedMessage);
+				String allCaps = yellerVar.caps();
+				dataForView.addAttribute("output", allCaps);
+			}	
+			
+			//otherwise 
+			else {
+				//make submittedMessage quiet
+				Whisperer whisperVar = new Whisperer(submittedMessage);
+				String allLow = whisperVar.lower();
+				dataForView.addAttribute("output", allLow);
+				
+			}
+						
+			return "helloworld/mixed-messages";				
+		}
+	
+	}
+	
+
+	
+
  

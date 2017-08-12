@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BOOOOO</title>
+    <link rel="stylesheet" href="/site.css">
+  </head>
+  <body>
+    <h1>Make up your mind, dude.</h1>
+    <p>
+      <b>THIS IS WHERE THE OUTPUT GOES FROM ADD ATTRIBUTE:</b>
+      {{ output }}
+    </p>
+    {{> helloworld/yeller-form }} <!-- go to message-form and grab all content, replaces this line with that HTML and sends to browser -->
+     {{> helloworld/whisper-form }}
+    {{> math/adder-form }}
+    {{> helloworld/speech-form }}
+  </body>
+</html>
