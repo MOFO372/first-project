@@ -1,12 +1,25 @@
-<h2>Select your mathing:</h2>
+<style>
+
+h1 {
+
+color:#4A235A;
+font:Veranda;
+
+}
+
+</style>
+
+
+<h1>Select your mathing:</h1>
+
+<img src="https://media.giphy.com/media/wtCkMJthPKIRq/giphy.gif" alt="Tina Fey as Liz Lemon enjoying some night cheese.">  
 <form method="post" action="/calculate/calculate-something"> <!--this is how you tell java where to go, sends the info to message-path -->
-  <input type="text" name="submittedNumberOne" placeholder="0">
-  <input type="text" name="submittedNumberTwo" placeholder="0">
+  <input autofocus type="number" name="submittedNumberOne" value="0" step="any" required>
+  <input type="number" name="submittedNumberTwo" value="0" step="any" required>
   <button name="mathChoice" value="+">+</button>
   <button name="mathChoice" value="-">-</button>
   <button name="mathChoice" value="*">*</button>
   <button name="mathChoice" value="/">/</button>
   <button name="mathChoice" value="%">%</button>
-  <button name="mathChoice" value="^">^</button>
-  
+  <button name="mathChoice" value="^">^</button>  
 </form> 
